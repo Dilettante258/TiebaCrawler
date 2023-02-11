@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="ch">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>浅薄的涉猎者 贴吧工具箱小扩展 </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+            rel="icon"
+            href='{{ url_for("static", filename="picture/index.ico") }}'
+            type="image/x-icon"
+    />
+    <!-- CSS here -->
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/bootstrap.min.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/fontawesome-all.min.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/animate.min.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/flaticon.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/odometer-theme-default.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/magnific-popup.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/meanmenu.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/swipper.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/main.css") }}'>
+</head>
+
+<body>
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+        </div>
+    </div>
+</div>
+<!-- header_area_start -->
+<header>
+    <div class="header-transparent header-sticky">
+        <div class="header-main">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-6 col-sm-4 col-6">
+                        <div class="sasup-logo mr-35 d-inline-block">
+                            <a href="" class="logo-1"><img src='{{ url_for("static", filename="picture/logo-white.png") }}' alt=""></a>
+                            <a href="" class="logo-2"><img src='{{ url_for("static", filename="picture/logo.png") }}' alt=""></a>
+                        </div>
+                        <div class="sasup-header d-none d-lg-inline-block">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="">指引</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">刷新本页</a></li>
+                                            <li><a href="usage">使用教程</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-8 col-6">
+                        <div class="sasup-header-action-btn">
+                            <a href="contact" class="sasup-theme-btn ml-25 d-none d-sm-inline-block"><span>联系作者</span></a>
+                            <div class="mobile-bar-control mobile-bar-control-white d-inline-block d-lg-none">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header_area_start -->
+<!-- responsive sidebar start -->
+<div class="responsive-sidebar d-block d-lg-none">
+    <div class="responsive-sidebar-inner">
+        <div class="logo mb-30">
+            <div class="row">
+                <div class="col-6">
+                    <img src='{{ url_for("static", filename="picture/logo.png") }}' alt="">
+                </div>
+                <div class="col-6">
+                    <div class="text-end">
+                        <button class="responsive-sidebar-close"><i class="fal fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resposive-sidebar-menu mb-50">
+            <div class="mobile-menu"></div>
+        </div>
+        <div class="responsive-sidebar-actions">
+            <a href="contact" class="sasup-theme-btn text-center d-inline-block d-sm-none w-100"><span>联系作者</span></a>
+        </div>
+    </div>
+</div>
+<!-- responsive sidebar end -->
+
+<main>
+    <!-- hero area start -->
+    <section class="hero-area hero-space-1 bg-top-left pt-190 pb-150" data-background='{{ url_for("static", filename="assets/img/shape/hero-bg.jpg") }}' data-bg-color="#eeeff4">
+    <div class="container">
+        <div class="hero-inner p-rel">
+            <div class="hero-shapes">
+                <div class="shape1 p-abs">
+                    <img src='{{ url_for("static", filename="picture/shape_011.png") }}' alt="">
+                </div>
+                <div class="shape2 p-abs">
+                    <img src='{{ url_for("static", filename="picture/shape_02.png") }}' alt="">
+                </div>
+                <div class="shape3 p-abs d-none d-xl-block">
+                    <img src='{{ url_for("static", filename="picture/shape_031.png") }}' alt="">
+                </div>
+                <div class="shape4 p-abs">
+                    <img src='{{ url_for("static", filename="picture/shape_041.png") }}' alt="">
+                </div>
+            </div>
+            <div class="sasup-hero-content text-center">
+                <span class="sasup-hero-content-sub wow fadeInUp" data-wow-delay="0s">贴吧工具箱小扩展</span>
+                <h3 class="sasup-hero-content-main wow fadeInUp" data-wow-delay=".3s">输入用户名或相关链接<br>
+                    来爬取词云和发言记录</h3>
+                <div class="sasup-hero-form mb-30 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="sasup-hero-form-inner p-rel d-flex align-items-center">
+                        <form action="/submit" method="POST">
+                            <div class="sasup-form-group">
+                                <input type="text" name="basicdata">
+                                <label for="basicdata" class="epix-hero-form-label">在这里<span class="d-none d-sm-inline-block">输入</span>……</label>
+                            </div>
+                            <div class="sasup-form-group">
+                                <input type="submit" value="Get Started" name="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="sasup-form-group mb-55 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="started-label">
+                        <label for="hero-email">第一次用看教程，按钮只点一次<img src='{{ url_for("static", filename="picture/arrow.png") }}' alt=""></label>
+                    </div>
+                </div>
+                <div class="dashbord-img dashbord-shadow d-inline-block fix">
+                    <img src='{{ url_for("static", filename="picture/dashbord-img.jpg") }}' class="img-fluid wow bounceInUp" data-wow-delay=".8s" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <hr class="divider mb-115">
+</main>
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+</div>
+<!-- back to top end -->
+
+<!-- copyright area start -->
+<div class="copyright-area pt-30 pb-30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7">
+                <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2023111111号-1</a>
+                <br>
+                <img src='{{ url_for("static", filename="picture/gongan.png") }}'>
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42052702000221" target="_blank">鄂公网安备 11111111111111号</a>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-5">
+                <div class="text-lg-end">
+                    <div class="footer-social">
+                        <!--<a href="#" data-bg-color="#3b5998"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" data-bg-color="#1da1f2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-bg-color="#e60023"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" data-bg-color="#1ab7ea"><i class="fab fa-vimeo-v"></i></a>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- copyright area end -->
+
+<!-- JS here -->
+<script src='{{ url_for("static", filename="js/jquery.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/bootstrap.bundle.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/swipper-bundle.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/jquery.meanmenu.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/wow.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/waypoints.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/jquery.counterup.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/jquery.scrollUp.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/ajax-form.js") }}'></script>
+<script src='{{ url_for("static", filename="js/jquery.magnific-popup.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/isotope.pkgd.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/imagesloaded.pkgd.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/mouse-wheel.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/odometer.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/appair.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/back-to-top.min.js") }}'></script>
+<script src='{{ url_for("static", filename="js/main.js") }}'></script>
+-->
+</body>
+
+</html>

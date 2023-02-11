@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>使用教程</title>
+    <link
+            rel="icon"
+            href='{{ url_for("static", filename="picture/index.ico") }}'
+            type="image/x-icon"
+    />
+</head>
+<body>
+<h2><strong>建议使用贴吧ID进行查询</strong>，<em>（不是那串纯数字）</em>。</h2>
+<p>若不知道如何获取，则使用相关网页如主页地址，主题帖地址获取贴吧id。
+  百度贴吧有反爬虫机制，自动获取贴吧id部分可能失败，不过在我的精心调试下应该不会失败了。
+  目前设定的<em>最大可用获得评论数</em><u>是<span style="color:red">600</span>条</u>。要想更多请联系作者或者等后期开发一个选项栏。</p>
+<p></p>
+<p>等待时间有点长😓，服务器小水管是这样的。另外爬太快了会被封，所以主线程没有写什么异步IO这类东西的东西。有时候人太多了，服务器配置一般，所以运行会更慢，<strong>需要的时间速度从10-50秒不等。</strong></p>
+<p><strong>输入好后提交点一次就好了</strong>，然后耐心等待，不然就返回不了结果。</p>
+<p>输入框中只能输入：</p>
+<ul>
+<li><p><em>用户名</em>  不是昵称和那串数字id <code>Admire_02</code></p>
+</li>
+<li><p><em>纯网页链接</em> 这点我后面再增加适配，针对百度的分享优化一下。 </p>
+<p>主页链接<code>https://tieba.baidu.com/home/main?id=tb.1.1e1bb5f8._oTizPuMkZjpdOI6Dr4GDg</code></p>
+</li>
+
+</ul>
+<p>		主题帖链接<code>https://tieba.baidu.com/p/8220859518</code></p>
+<p>最重要的是<strong>只点一次，不要多点，等待下载</strong></p>
+<p>错误示例：</p>
+<pre><code>🎀Admire😈
+@🎀Admire😈@给你分享了贴吧号#3364447105#整段复制后打开贴吧即可找到Ta
+</code></pre>
+<p>&nbsp;</p>
+
+<hr />
+<p><del>另外，我对百度贴吧很无语，百度贴吧的写法给我的代码编写带来了无穷无尽的灾难，有些问题，修了3天还是修不好，我最终决定不跟它硬碰硬了</del>😅😅😅<del>为了解决各种各样的bug，又现学了很多东西，结果还是不能处理。我最终还是想到了解决办法，不过代码就变得傻逼而臃肿低效。</del></p>
+<p>&nbsp;</p>
+<hr />
+<p>贴吧：</p>
+<p>🎀Admire😈		<a href='https://tieba.baidu.com/home/main?id=tb.1.1e1bb5f8._oTizPuMkZjpdOI6Dr4GDg' target='_blank'>点击这里</a></p>
+
+<p>邮箱：</p>
+<p><img src="https://rescdn.qqmail.com/zh_CN/htmledition/images/2023_logo635751.png" alt="Dilettante258@qq.com" style="zoom:50%;" /></p>
+<p><a href='mailto:dilettante258@qq.com' target='_blank' class='url'>dilettante258@qq.com</a></p>
+<p>电话：</p>
+<p>+1 705 414 9855</p>
+<p>&nbsp;</p>
+<div class="footer bgw">
+    <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2023111111号-1</a>
+    </div>
+</body>
+</html>

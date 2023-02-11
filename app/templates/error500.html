@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>错误代码500</title>
+    <link
+            rel="icon"
+            href='{{ url_for("static", filename="picture/index.ico") }}'
+            type="image/x-icon"
+    />
+    <link
+            rel="stylesheet"
+            href="https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/portal/css/global.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/domain/stop-page/css/stop-page.css"
+    />
+    <style>
+        .ifc-desc {
+            margin-top: 10px;
+        }
+        .stop-footer {
+            margin-top: 100px;
+        }
+        .spa-logo {
+            height: 177px;
+        }
+        .sp-noaccess .spa-text {
+            height: auto;
+            padding-top: 14px;
+        }
+        .sp-noaccess .spa-text .spa-tit {
+            height: 44px;
+            margin-bottom: 16px;
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 44px;
+        }
+        .sp-noaccess .spa-text .spa-desc {
+            color: #3d485d;
+            line-height: 28px;
+        }
+        .if-common .ifc-tit {
+            font-size: 16px;
+            color: #000;
+            line-height: 24px;
+            height: 24px;
+        }
+        .if-common .ifc-desc {
+            width: 100%;
+            color: #3d485d;
+        }
+        .if-slice {
+            height: 1px;
+            border: 0;
+            background: #fff;
+            box-shadow: inset 0 -1px 0 0 rgba(235, 238, 242, 1);
+        }
+        .if-common .ifc-desc a {
+            color: #2880e7;
+        }
+        .stop-footer .sf-num a {
+            color: #98a3b7;
+        }
+        @media screen and (max-width: 768px) {
+            .sp-noaccess .spa-text .spa-desc {
+                width: auto;
+                height: auto;
+                padding: 0 12px;
+            }
+            .sp-sec .sp-if {
+                padding-bottom: 24px;
+            }
+            .stop-footer {
+                padding: 0 20px;
+            }
+        }
+        @media screen and (min-width: 769px) {
+            .sp-noaccess .spa-text {
+                width: 480px;
+            }
+            .sp-w {
+                width: 830px;
+            }
+            .stop-footer {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: 24px;
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="body">
+    <div class="stop-page">
+        <div class="sp-fir">
+            <div class="sp-w sp-noaccess">
+                <div class="spa-logo">
+                    <img
+                            src="https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/domain/stop-page/css/img/slice/Stop-page.svg"
+                            alt=""
+                    />
+                </div>
+                <div class="spa-text">
+                    <div class="spa-tit">服务器没有返回结果</div>
+                    <div class="spa-desc" style="margin-bottom: 10px">
+                        数据已经提交到服务器去了。
+                    </div>
+                    <div class="spa-desc">
+                        可能是由于您提交的数据问题或者服务器程序的内部问题。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sp-sec">
+            <div class="sp-w sp-if">
+                <div class="if-common">
+                    <div class="ifc">
+                        <div class="ifc-tit">如果您确信你提供的数据或者网络没有问题：</div>
+                        <div class="ifc-desc">请与作者联系。我将检查并修改存在的bug。
+                        邮箱：Dilettante258@qq.com</div>
+                    </div>
+                </div>
+                <div class="if-slice"></div>
+                <div class="if-common">
+                    <div class="ifc">
+                        <div class="ifc-tit">如果您不确定：</div>
+                        <div class="ifc-desc">
+                            出现该种错误最常见的原因有以下三点，请您根据实际情况检查：
+                        </div>
+                        <div class="ifc-desc">
+                            1、提供了不准确、不常规的地址或错误的、不存在的id。
+                        </div>
+                        <div class="ifc-desc">
+                            2、查询对象再设置里隐藏了自己发言。
+                        </div>
+                        <div class="ifc-desc">
+                            3、服务器抽风了，同时查询人数过多。
+                        </div>
+                        <div class="ifc-desc">
+                            若上述内容未解答您的疑问，请通过邮件联系作者为您提供方便快捷的服务。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer bgw">
+    <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2023111111号-1</a>
+    </div>
+<script>
+    document.querySelectorAll("a").forEach((el) => {
+        el.addEventListener("click", (e) => {
+            try {
+                let tag = e.currentTarget.dataset.sdi;
+                let psArr = tag.split("-");
+                let ptype = psArr[0];
+                let stype = psArr[1];
+                _sdi.stat({
+                    ptype: ptype,
+                    stype: stype,
+                });
+            } catch (error) {}
+        });
+    });
+</script>
+</body>
+</html>
